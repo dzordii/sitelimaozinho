@@ -71,11 +71,14 @@
 <!-- VSL -->
 <section id="vsl">
 	<div class="video-container" id="videoContainer">
-		<video autoplay id="myVideo" playsinline>
+		<video id="myVideo" playsinline>
 			<source src="./img/vsl.mp4" type="video/mp4">
 			Seu navegador não suporta o vídeo.
 		</video>
-		<button class="play-button" id="playButton"></button>
+		<div class="play-overlay" id="playOverlay">
+			<img src="./img/playbutton.png" alt="Play Button">
+			<p>Clique aqui para reproduzir o vídeo</p>
+		</div>
 	</div>
     
     <!-- Botão de Checkout -->
