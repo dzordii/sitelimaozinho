@@ -73,6 +73,7 @@ header.header {
 .comments-header {
     padding-left: 20px; /* Espaço interno da seção */
 	padding-right: 20px;
+	padding-top: 20px;
     border-radius: 5px; /* Bordas arredondadas */
     background-color: #f9f9f9; /* Cor de fundo */
 }
@@ -243,10 +244,6 @@ header.header {
 }
 
 
-
-
-
-
 .perfil {
 width: 50px;
 height: 50px;
@@ -267,13 +264,14 @@ margin-right: 10px;
 }
 
 .checkout-button {
+	display: flex;
     text-align: center;
     margin-top: 20px;
 	margin-bottom: 20px;
 }
 
 .checkout-button img {
-    max-width: 70%;
+    width: 299px;
     height: auto;
     cursor: pointer;
 }
@@ -298,25 +296,28 @@ margin-right: 10px;
     max-width: 800px;
     height: auto;
 }
-/* Estilos para o container do vídeo */
+
+/* Container do vídeo */
 .video-container {
-	position: relative;
-	display: inline-block;
+    position: relative;
     width: 100%;
-    max-width: 600px; /* Ajuste conforme necessário */
+    max-width: 100%; /* O vídeo ocupa 100% da largura disponível */
 }
 
 /* Estilos para o vídeo */
 #myVideo {
-		display: block;
-		width: 100%;
-		height: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
 }
 
+/* Sobreposição de reprodução */
 .play-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza a sobreposição */
     width: 100%;
     height: 100%;
     display: flex;
@@ -328,38 +329,18 @@ margin-right: 10px;
     text-align: center;
 }
 
+/* Estilos para a imagem do botão de áudio */
 .play-overlay img {
-    max-width: 100px; /* Ajuste o tamanho do ícone conforme necessário */
+    width: 20%; /* Tamanho relativo para responsividade */
+    max-width: 100px; /* Limita o tamanho máximo */
 }
 
+/* Estilos para o texto da sobreposição */
 .play-overlay p {
     margin-top: 10px;
+    font-size: 1.5vw; /* Tamanho de fonte responsivo */
+    max-font-size: 18px; /* Limita o tamanho máximo da fonte */
 }
-
-/* Estilos para o ícone de play */
-.play-button {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		font-size: 48px;
-		color: white;
-		background-color: rgba(0, 0, 0, 0.5);
-		border: none;
-		border-radius: 50%;
-		width: 80px;
-		height: 80px;
-		text-align: center;
-		line-height: 80px;
-		cursor: pointer;
-		display: none; /* Escondido inicialmente */
-}
-
-/* Mostra o botão quando o vídeo está pausado */
-.video-paused .play-button {
-		display: block;
-}
-
 
 footer {
     background-color: #000000; /* Cor de fundo */
@@ -399,4 +380,34 @@ footer {
 
 video::-webkit-media-controls {
     display: none !important;
+}
+
+/* Estilos adicionais para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+    .play-overlay img {
+        width: 25%; /* Aumenta o tamanho da imagem em telas menores */
+    }
+
+    .play-overlay p {
+        font-size: 3.5vw; /* Ajusta o tamanho do texto em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .play-overlay img {
+        width: 30%; /* Aumenta o tamanho da imagem em telas muito pequenas */
+    }
+
+    .play-overlay p {
+        font-size: 4.5vw; /* Ajusta o tamanho do texto em telas muito pequenas */
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #checkoutButton {
+        padding: 8px 16px;
+        font-size: 1rem; /* Reduz o tamanho da fonte em telas menores */
+        bottom: 15px; /* Ajusta a posição do botão em telas menores */
+    }
 }

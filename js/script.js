@@ -1,58 +1,49 @@
-const checkoutButton = document.getElementById('checkoutButton');
 const myVideo = document.getElementById('myVideo');
-const playButton = document.getElementById('playButton');
-const videoContainer = document.getElementById('videoContainer');
 const playOverlay = document.getElementById('playOverlay');
+const videoContainer = document.getElementById('videoContainer');
 
-// Função para pausar ou reproduzir o vídeo
-function togglePlay() {
-    if (myVideo.paused) {
-        myVideo.play();
+// Função para alternar a visibilidade da sobreposição e o estado do áudio do vídeo
+function toggleAudio() {
+    if (myVideo.muted) {
+        myVideo.muted = false;
+        playOverlay.style.display = 'none'; // Oculta a sobreposição
     } else {
-        myVideo.pause();
+        myVideo.muted = true;
+        playOverlay.style.display = 'flex'; // Mostra a sobreposição
     }
 }
 
-// Adiciona um evento de clique ao vídeo
-myVideo.addEventListener('click', togglePlay);
+// Adiciona um evento de clique à sobreposição para ativar o áudio
+playOverlay.addEventListener('click', toggleAudio);
 
-// Adiciona um evento para mostrar/esconder o botão quando o vídeo é pausado/reproduzido
+// Adiciona um evento de clique ao vídeo para alternar o estado do áudio e a sobreposição
+myVideo.addEventListener('click', toggleAudio);
+
+// Esconde a sobreposição quando o vídeo está com o áudio ativado
 myVideo.addEventListener('play', function() {
-    videoContainer.classList.remove('video-paused');
+    if (!myVideo.muted) {
+        playOverlay.style.display = 'none';
+    }
+});
+
+// Mostra a sobreposição quando o vídeo é mutado
+myVideo.addEventListener('pause', function() {
+    if (myVideo.muted) {
+        playOverlay.style.display = 'flex';
+    }
 });
 
 // Tenta reproduzir o vídeo automaticamente quando a página é carregada
 window.addEventListener('load', function() {
     myVideo.play().catch(function(error) {
         console.log('Autoplay bloqueado, o vídeo não pode ser reproduzido automaticamente.');
+        playOverlay.style.display = 'flex'; // Mostra a sobreposição se o autoplay for bloqueado
     });
 });
 
-// Função que verifica o tempo de reprodução do vídeo
+// Função que verifica o tempo de reprodução do vídeo e mostra o botão de checkout
 myVideo.addEventListener('timeupdate', function() {
-    if (myVideo.currentTime >= 15) {
+    if (myVideo.currentTime >= 15) { // Mostra o botão após 15 segundos
         checkoutButton.style.display = 'block';
     }
-});
-
-// Função para alternar a visibilidade da sobreposição e a reprodução do vídeo
-function togglePlay() {
-    if (myVideo.paused) {
-        myVideo.play();
-        playOverlay.style.display = 'none'; // Oculta a sobreposição
-    } else {
-        myVideo.pause();
-        playOverlay.style.display = 'flex'; // Mostra a sobreposição
-    }
-}
-
-// Adiciona um evento de clique à sobreposição
-playOverlay.addEventListener('click', togglePlay);
-
-// Adiciona um evento de clique ao vídeo para alternar a sobreposição
-myVideo.addEventListener('click', togglePlay);
-
-// Mostra a sobreposição quando o vídeo é pausado
-myVideo.addEventListener('pause', function() {
-    playOverlay.style.display = 'flex';
 });
