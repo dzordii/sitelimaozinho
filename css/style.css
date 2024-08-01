@@ -369,3 +369,7 @@ footer {
 	cursor: pointer;
 	animation: pulse 1s infinite;
 }
+
+video::-webkit-media-controls {
+    display: none !important;
+}
