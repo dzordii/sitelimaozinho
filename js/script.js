@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
 
 // Função que verifica o tempo de reprodução do vídeo e mostra o botão de checkout
 myVideo.addEventListener('timeupdate', function() {
-    if (myVideo.currentTime >= 15) { // Mostra o botão após 15 segundos
+    if (myVideo.currentTime >= 1110 ) { // Mostra o botão após 15 segundos
         checkoutButton.style.display = 'block';
     }
 });
