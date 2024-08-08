@@ -9,8 +9,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow: auto;
 }
 
 .container {
@@ -22,6 +22,10 @@ body {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+    overflow: auto;
 }
 
 .image-content img {
@@ -32,16 +36,16 @@ body {
 
 h1 {    
     font-weight: 700;
-    font-size: 2em;
-    margin: 20px 0;
+    font-size: 1.5em;
+    margin: 10px 0;
     color: #333;
 }
 
 p {
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.5;
-    margin: 20px 0;
+    margin: 10px 0;
     color: #555;
 }
 
@@ -49,8 +53,8 @@ p {
     background: linear-gradient(to right, #03f022, #00ff80);
     color: #000;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.5em;
+    padding: 10px 20px;
+    font-size: 1.2em;
     font-weight: 700;
     cursor: pointer;
     border-radius: 5px;
@@ -71,12 +75,16 @@ p {
     }
 
     #ctaButton {
-        font-size: 1.2em;
-        padding: 10px 20px;
+        font-size: 1em;
+        padding: 10px 15px;
     }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
     h1 {
         font-size: 1.2em;
     }
@@ -86,7 +94,7 @@ p {
     }
 
     #ctaButton {
-        font-size: 1em;
-        padding: 10px 20px;
+        font-size: 0.9em;
+        padding: 8px 12px;
     }
 }
