@@ -7,6 +7,7 @@ body {
     background-size: cover;
     background-position: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -63,6 +64,17 @@ p {
     transform: scale(1.05);
 }
 
+footer {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(26, 136, 23, 0.8);
+    color: white;
+    text-align: center;
+    font-size: 0.4em;
+    bottom: 0;
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 1.5em;
@@ -94,6 +106,15 @@ p {
     #ctaButton {
         font-size: 0.9em;
         padding: 14px 20px;
+    }
+
+    footer{
+        font-size: 0.6em;
+    }
+
+    footer, p {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
