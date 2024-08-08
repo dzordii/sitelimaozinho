@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    position: relative;
+    overflow: hidden; /* Evita que o pseudo-elemento vá além dos limites do body */
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Use fixed para garantir que o fundo sempre cubra toda a tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./source/background.png');
+    background-size: cover;
+    background-repeat: no-repeat; /* Use no-repeat se não quiser repetir a imagem */
+    background-attachment: fixed;
+    opacity: 0.5; /* Ajuste a transparência aqui */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo do body */
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.text-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.text-content .icon {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+h1 {    
+    font-weight: 700;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    line-height: 1,5em;
+    margin-bottom: 30px;
+}
+
+#ctaButton {
+    
+    background: linear-gradient(to right, #03f022, #00ff80);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ebook-cover {
+    max-width: 100%;
+    height: auto;
+    box-shadow: #000000;
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .text-content, .image-content {
+        flex: 100%;
+    }
+    
+    .text-content {
+        text-align: center;
+        align-items: center;
+        padding: 20px;
+    }
+    
+
+    h1 {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 1.5em;
+    }
+
+    p {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 1em;
+    }
+
+    img {
+        width: 320px;
+        margin-top: 40px;
+    }
+
+    #ctaButtonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #ctaButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.2em;
+        padding: 20px 80px;
+        animation: pulsar 2s infinite;
+    }
+}
+
+@media (max-width: 391px) {
+    img {
+        width: 90%; /* Ajusta a largura da imagem para 100% do contêiner pai */
+        max-width: 350px; /* Mantém a largura máxima */
+        margin-top: 20px;
+    }
+}
+@media (max-width: 376px) {
+    .text-content, .image-content {
+        flex: 100%;
+    }
+    
+    .text-content {
+        text-align: center;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    h1 {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 1.5em;
+    }
+
+    p {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 1em;
+    }
+
+    img {
+        width: 50%; /* Ajusta a largura da imagem para 100% do contêiner pai */
+        max-width: 350px; /* Mantém a largura máxima */
+        margin-top: 20px;
+    }
+
+    #ctaButtonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 80px; 
+    }
+    
+    #ctaButton {
+        display: flex;
+        font-size: 1em; /* Ajusta o tamanho da fonte */
+        padding: 20px 40px; /* Ajusta o padding para se adequar à tela menor */
+        animation: pulsar 2s infinite;
+        max-width: 100%; /* Garante que o botão não ultrapasse a largura da tela */
+    }
+}
+
