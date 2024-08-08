@@ -11,7 +11,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: auto;
+    overflow-x: hidden; /* Impede a rolagem horizontal */
+    overflow-y: auto; /* Permite a rolagem vertical se necessário */
 }
 
 .container {
