@@ -80,6 +80,25 @@ p {
 
 @media (max-width: 480px) {
     .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    #ctaButton {
+        font-size: 0.9em;
+        padding: 14px 20px;
+    }
+}
+
+@media (max-width: 378px) {
+    .container {
         font-size: 12px;
         padding: 10px;
     }
