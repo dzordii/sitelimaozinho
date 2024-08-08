@@ -1,206 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-    position: relative;
-    overflow: hidden; /* Evita que o pseudo-elemento vá além dos limites do body */
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
     background-image: url('./source/background.png');
     background-size: cover;
-}
-
-
-.container {
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-.content {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    border-radius: 10px;
+    height: 100vh;
     overflow: hidden;
 }
 
-.text-content {
-    flex: 1;
-    padding: 40px;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    text-align: center;
 }
 
-.text-content .icon {
-    width: 50px;
-    margin-bottom: 20px;
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 h1 {    
     font-weight: 700;
     font-size: 2em;
-    margin-bottom: 10px;
-    color: white;
+    margin: 20px 0;
+    color: #333;
 }
 
 p {
-    font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 1.2em;
-    line-height: 1,5em;
-    margin-bottom: 30px;
-    color: aliceblue;
+    line-height: 1.5;
+    margin: 20px 0;
+    color: #555;
 }
 
 #ctaButton {
-    
     background: linear-gradient(to right, #03f022, #00ff80);
-    color: rgb(0, 0, 0);
+    color: #000;
     border: none;
     padding: 15px 30px;
     font-size: 1.5em;
-    font-family: "Poppins", sans-serif;
     font-weight: 700;
     cursor: pointer;
     border-radius: 5px;
+    transition: transform 0.2s;
 }
 
-.image-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.ebook-cover {
-    max-width: 100%;
-    height: auto;
-    box-shadow: #000000;
-}
-
-@keyframes pulsar {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+#ctaButton:hover {
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-    .text-content, .image-content {
-        flex: 100%;
-    }
-    
-    .text-content {
-        text-align: center;
-        align-items: center;
-        padding: 20px;
-    }
-    
-
     h1 {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-left: 5px;
-        margin-right: 5px;
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    #ctaButton {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
         font-size: 1.2em;
     }
 
     p {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-left: 10px;
-        margin-right: 10px;
         font-size: 0.9em;
     }
 
-    img {
-        width: 320px;
-        margin-top: 40px;
-    }
-
-    #ctaButtonContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-    }
-    
     #ctaButton {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-size: 1.2em;
-        padding: 20px 80px;
-        animation: pulsar 2s infinite;
+        font-size: 1em;
+        padding: 10px 20px;
     }
 }
-
-@media (max-width: 391px) {
-    img {
-        width: 90%; /* Ajusta a largura da imagem para 100% do contêiner pai */
-        max-width: 350px; /* Mantém a largura máxima */
-        margin-top: 20px;
-    }
-}
-@media (max-width: 376px) {
-    .text-content, .image-content {
-        flex: 100%;
-    }
-    
-    .text-content {
-        text-align: center;
-        align-items: center;
-        padding: 10px;
-    }
-    
-    h1 {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-left: 5px;
-        margin-right: 5px;
-        font-size: 1.1em;
-    }
-
-    p {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 0.8em;
-    }
-
-    img {
-        width: 80%; /* Ajusta a largura da imagem para 100% do contêiner pai */
-        max-width: 390px; /* Mantém a largura máxima */
-        margin-top: 20px;
-    }
-
-    #ctaButtonContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding-bottom: 80px; 
-    }
-    
-    #ctaButton {
-        display: flex;
-        font-size: 1em; /* Ajusta o tamanho da fonte */
-        padding: 20px 40px; /* Ajusta o padding para se adequar à tela menor */
-        animation: pulsar 2s infinite;
-        max-width: 100%; /* Garante que o botão não ultrapasse a largura da tela */
-    }
-}
-
