@@ -1,140 +1,432 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-image: url('./source/background.png');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow-x: hidden; /* Impede a rolagem horizontal */
-    overflow-y: auto; /* Permite a rolagem vertical se necessário */
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --main-color: #0b5a23;
+  --second-color: #38ff8b;
+  --text-color: #444;
+  --gradient: linear-gradient(#085c32, #00ff15);
+}
+/* Custom Scroll Bar */
+html::-webkit-scrollbar {
+  width: 0.5rem;
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 5rem;
+}
+section {
+  padding: 50px 100px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    box-sizing: border-box;
-    overflow: auto;
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* Colocando o conteúdo em coluna */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--main-color);
+  color: rgb(255, 255, 255);
 }
 
-.image-content img {
-    max-width: 100%;
-    height: auto;
+.timer {
+  font-size: 20px;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
 }
 
-h1 {    
-    font-weight: 700;
-    font-size: 1.5em;
-    margin: 0px 0;
-    color: #ffffff;
+.home {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
-p {
-    font-weight: 500;
-    font-size: 1em;
-    line-height: 1.5;
-    margin: 10px 0;
-    color: #ffffff;
+.home .btn {
+  display: flex;
+  justify-content: center;
+  background: var(--main-color);
+  color: #fff;
+  font-weight: 800;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 0.5rem;
 }
 
-#ctaButton {
-    background: linear-gradient(to right, #03f022, #00ff80);
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    font-weight: 700;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.2s;
+.text h1 {
+  font-size: 3.5rem;
+}
+.text span {
+  color: var(--main-color);
 }
 
-#ctaButton:hover {
-    transform: scale(1.05);
+.text p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 800;
 }
 
-footer {
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: rgba(26, 136, 23, 0.8);
-    color: white;
-    text-align: center;
-    font-size: 0.4em;
-    bottom: 0;
+.text img {
+  margin-top: 2rem;
+  width: 250px;
 }
 
+.heading {
+  text-align: center;
+  color: #fff;
+}
+
+.heading2 {
+  text-align: center;
+  color: #000000;
+}
+.heading2 span {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.heading span {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.heading h1 {
+  font-size: 2rem;
+}
+
+.services {
+  background-color: var(--main-color);
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.services-container .box {
+  padding: 10px;
+  border-radius: 1rem;
+  box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.685);
+}
+.services-container .box .box-img {
+  width: 100%;
+  height: 200px;
+}
+
+.services-container .box .box-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center;
+}
+.services-container .box p {
+  padding: 0 10px;
+  border: 1px solid var(--text-color);
+  width: 58px;
+  border-radius: 0.5rem;
+  margin: 1rem 0 1rem;
+  color: #fff;
+}
+.services-container .box h3 {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+}
+.services-container .box h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0.2rem 0 0.5rem;
+}
+.services-container .box h2 span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+}
+.services-container .box .btn {
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  color: var(--main-color);
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+.services-container .box .btn:hover {
+  background: var(--main-color);
+}
+
+.about {
+  background-color: var(--main-color);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2rem;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.heading img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid var(--second-color);
+}
+
+.about-text span {
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+}
+.about-text p {
+  color: #fff;
+  font-weight: 300;
+  margin: 0.5rem 0 1.4rem;
+}
+.about-text .btn {
+  font-weight: 800;
+  padding: 10px 20px;
+  background: #fff;
+  color: var(--main-color);
+  border-radius: 0.5rem;
+}
+.about-text .btn:hover {
+  background: var(--main-color);
+}
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.rev-img {
+  width: 70px;
+  height: 70px;
+}
+.rev-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid var(--second-color);
+}
+.reviews-container .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.233);
+  border-radius: 0.5rem;
+}
+.reviews-container .box h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.5rem;
+}
+.reviews-container .box p {
+  font-style: italic;
+}
+.reviews-container .box .stars .bx {
+  color: var(--main-color);
+}
+.newsletter {
+  background: linear-gradient(to top right, #08662f, #000000);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.newsletter h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.newsletter .box {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter img  {
+  width: 180px;
+}
+
+.newsletter .box .btn {
+  font-weight: 800;
+  background: #ffffff;
+  color: var(--main-color);
+  padding: 8px 20px;
+  border-radius: 0.5rem;
+}
+.copyright {
+  font-size: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.social a {
+  color: #444;
+  padding: 10px;
+  font-size: 21px;
+}
+/* Making Responsive */
+@media (max-width: 991px) {
+  header {
+    padding: 18px 40px;
+  }
+  section {
+    padding: 50px 40px;
+  }
+}
+@media (max-width: 881px) {
+  .home {
+    background-position: left;
+  }
+  .form-container form {
+    bottom: 0.2rem;
+    left: 40px;
+  }
+}
 @media (max-width: 768px) {
-    h1 {
-        font-size: 1.5em;
-    }
-
-    p {
-        font-size: 1em;
-    }
-
-    #ctaButton {
-        font-size: 1em;
-        padding: 10px 15px;
-    }
+  header {
+    padding: 11px 40px;
+  }
+  #menu-icon {
+    display: initial;
+  }
+  .sign-up {
+    display: none;
+  }
+  .text img {
+    width: 330px;
+  }
+  .text h1 {
+    font-size: 2.5rem;
+  }
+  .home {
+    grid-template-columns: 1fr;
+  }
+  .form-container form {
+    position: unset;
+  }
+  header .navbar {
+    position: absolute;
+    top: -500px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.473);
+    transition: 0.2s ease;
+    text-align: left;
+  }
+  .navbar.active {
+    top: 100%;
+  }
+  .navbar a {
+    padding: 1rem;
+    border-left: 2px solid var(--main-color);
+    margin: 1rem;
+    display: block;
+  }
+  .navbar a:hover {
+    color: #fff;
+    background: var(--main-color);
+    border: none;
+  }
+  .navbar a::after {
+    display: none;
+  }
+  .heading span {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .heading h1 {
+    font-size: 1.3rem;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-img {
+    padding: 1rem;
+    order: 2;
+  }
 }
 
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1.2em;
-    }
-
-    p {
-        font-size: 0.9em;
-    }
-
-    #ctaButton {
-        font-size: 0.9em;
-        padding: 14px 20px;
-    }
-
-    footer{
-        font-size: 0.6em;
-    }
-
-    footer, p {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+/* Adicione este CSS para melhorar a responsividade */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 15px; /* Reduzir o padding em telas menores */
+  }
 }
 
-@media (max-width: 378px) {
-    .container {
-        font-size: 12px;
-        padding: 10px;
-    }
+@media (max-width: 568px) {
+  .copyright {
+    flex-direction: column;
+  }
+  .newsletter .box {
+    width: 284px;
+  }
+  .form-container {
+    padding-top: 2rem;
+  }
+  .text h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 350px) {
+  header {
+    padding: 4px 14px;
+  }
+  .logo img {
+    width: 30px;
+  }
+  section {
+    padding: 50px 14px;
+  }
+  .header-btn .sign-in {
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .text h1 {
+    font-size: 1rem;
+  }
 
-    h1 {
-        font-size: 1.2em;
-    }
-
-    p {
-        font-size: 0.9em;
-    }
-
-    #ctaButton {
-        font-size: 0.9em;
-        padding: 14px 20px;
-    }
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(254px, auto));
+  }
 }
